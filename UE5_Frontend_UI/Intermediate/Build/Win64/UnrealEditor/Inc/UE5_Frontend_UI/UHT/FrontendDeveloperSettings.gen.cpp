@@ -13,6 +13,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeFrontendDeveloperSettings() {}
 
 // ********** Begin Cross Module References ********************************************************
+COREUOBJECT_API UScriptStruct* Z_Construct_UScriptStruct_FSoftObjectPath();
 DEVELOPERSETTINGS_API UClass* Z_Construct_UClass_UDeveloperSettings();
 ENGINE_API UClass* Z_Construct_UClass_UTexture2D_NoRegister();
 GAMEPLAYTAGS_API UScriptStruct* Z_Construct_UScriptStruct_FGameplayTag();
@@ -75,6 +76,26 @@ struct Z_Construct_UClass_UFrontendDeveloperSettings_Statics
 		{ "ForceInlineRow", "" },
 		{ "ModuleRelativePath", "Public/FrontendSettings/FrontendDeveloperSettings.h" },
 	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_MasterSoundClass_MetaData[] = {
+		{ "AllowedClasses", "/Script/Engine.SoundClass" },
+		{ "Category", "Audio" },
+		{ "ModuleRelativePath", "Public/FrontendSettings/FrontendDeveloperSettings.h" },
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_MusicSoundClass_MetaData[] = {
+		{ "AllowedClasses", "/Script/Engine.SoundClass" },
+		{ "Category", "Audio" },
+		{ "ModuleRelativePath", "Public/FrontendSettings/FrontendDeveloperSettings.h" },
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_SoundFXSoundClass_MetaData[] = {
+		{ "AllowedClasses", "/Script/Engine.SoundClass" },
+		{ "Category", "Audio" },
+		{ "ModuleRelativePath", "Public/FrontendSettings/FrontendDeveloperSettings.h" },
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_DefaultSoundMix_MetaData[] = {
+		{ "AllowedClasses", "/Script/Engine.SoundMix" },
+		{ "Category", "Audio" },
+		{ "ModuleRelativePath", "Public/FrontendSettings/FrontendDeveloperSettings.h" },
+	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FSoftClassPropertyParams NewProp_FrontendWidgetMap_ValueProp;
 	static const UECodeGen_Private::FStructPropertyParams NewProp_FrontendWidgetMap_Key_KeyProp;
@@ -82,6 +103,10 @@ struct Z_Construct_UClass_UFrontendDeveloperSettings_Statics
 	static const UECodeGen_Private::FSoftObjectPropertyParams NewProp_OptionsScreenSoftImageMap_ValueProp;
 	static const UECodeGen_Private::FStructPropertyParams NewProp_OptionsScreenSoftImageMap_Key_KeyProp;
 	static const UECodeGen_Private::FMapPropertyParams NewProp_OptionsScreenSoftImageMap;
+	static const UECodeGen_Private::FStructPropertyParams NewProp_MasterSoundClass;
+	static const UECodeGen_Private::FStructPropertyParams NewProp_MusicSoundClass;
+	static const UECodeGen_Private::FStructPropertyParams NewProp_SoundFXSoundClass;
+	static const UECodeGen_Private::FStructPropertyParams NewProp_DefaultSoundMix;
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FCppClassTypeInfoStatic StaticCppClassTypeInfo = {
@@ -95,6 +120,10 @@ const UECodeGen_Private::FMapPropertyParams Z_Construct_UClass_UFrontendDevelope
 const UECodeGen_Private::FSoftObjectPropertyParams Z_Construct_UClass_UFrontendDeveloperSettings_Statics::NewProp_OptionsScreenSoftImageMap_ValueProp = { "OptionsScreenSoftImageMap", nullptr, (EPropertyFlags)0x0004000000004001, UECodeGen_Private::EPropertyGenFlags::SoftObject, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 1, Z_Construct_UClass_UTexture2D_NoRegister, METADATA_PARAMS(0, nullptr) };
 const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_UFrontendDeveloperSettings_Statics::NewProp_OptionsScreenSoftImageMap_Key_KeyProp = { "OptionsScreenSoftImageMap_Key", nullptr, (EPropertyFlags)0x0000000000004001, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, 0, Z_Construct_UScriptStruct_FGameplayTag, METADATA_PARAMS(0, nullptr) }; // 133831994
 const UECodeGen_Private::FMapPropertyParams Z_Construct_UClass_UFrontendDeveloperSettings_Statics::NewProp_OptionsScreenSoftImageMap = { "OptionsScreenSoftImageMap", nullptr, (EPropertyFlags)0x0014000000004001, UECodeGen_Private::EPropertyGenFlags::Map, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UFrontendDeveloperSettings, OptionsScreenSoftImageMap), EMapPropertyFlags::None, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_OptionsScreenSoftImageMap_MetaData), NewProp_OptionsScreenSoftImageMap_MetaData) }; // 133831994
+const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_UFrontendDeveloperSettings_Statics::NewProp_MasterSoundClass = { "MasterSoundClass", nullptr, (EPropertyFlags)0x0010000000004001, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UFrontendDeveloperSettings, MasterSoundClass), Z_Construct_UScriptStruct_FSoftObjectPath, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_MasterSoundClass_MetaData), NewProp_MasterSoundClass_MetaData) };
+const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_UFrontendDeveloperSettings_Statics::NewProp_MusicSoundClass = { "MusicSoundClass", nullptr, (EPropertyFlags)0x0010000000004001, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UFrontendDeveloperSettings, MusicSoundClass), Z_Construct_UScriptStruct_FSoftObjectPath, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_MusicSoundClass_MetaData), NewProp_MusicSoundClass_MetaData) };
+const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_UFrontendDeveloperSettings_Statics::NewProp_SoundFXSoundClass = { "SoundFXSoundClass", nullptr, (EPropertyFlags)0x0010000000004001, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UFrontendDeveloperSettings, SoundFXSoundClass), Z_Construct_UScriptStruct_FSoftObjectPath, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_SoundFXSoundClass_MetaData), NewProp_SoundFXSoundClass_MetaData) };
+const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_UFrontendDeveloperSettings_Statics::NewProp_DefaultSoundMix = { "DefaultSoundMix", nullptr, (EPropertyFlags)0x0010000000004001, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(UFrontendDeveloperSettings, DefaultSoundMix), Z_Construct_UScriptStruct_FSoftObjectPath, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_DefaultSoundMix_MetaData), NewProp_DefaultSoundMix_MetaData) };
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_UFrontendDeveloperSettings_Statics::PropPointers[] = {
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UFrontendDeveloperSettings_Statics::NewProp_FrontendWidgetMap_ValueProp,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UFrontendDeveloperSettings_Statics::NewProp_FrontendWidgetMap_Key_KeyProp,
@@ -102,6 +131,10 @@ const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_UFrontend
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UFrontendDeveloperSettings_Statics::NewProp_OptionsScreenSoftImageMap_ValueProp,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UFrontendDeveloperSettings_Statics::NewProp_OptionsScreenSoftImageMap_Key_KeyProp,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UFrontendDeveloperSettings_Statics::NewProp_OptionsScreenSoftImageMap,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UFrontendDeveloperSettings_Statics::NewProp_MasterSoundClass,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UFrontendDeveloperSettings_Statics::NewProp_MusicSoundClass,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UFrontendDeveloperSettings_Statics::NewProp_SoundFXSoundClass,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UFrontendDeveloperSettings_Statics::NewProp_DefaultSoundMix,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_UFrontendDeveloperSettings_Statics::PropPointers) < 2048);
 UObject* (*const Z_Construct_UClass_UFrontendDeveloperSettings_Statics::DependentSingletons[])() = {
@@ -141,10 +174,10 @@ UFrontendDeveloperSettings::~UFrontendDeveloperSettings() {}
 struct Z_CompiledInDeferFile_FID_Users_sayan_Projects_UE5_UI_Framework_Modifications_UE5_Frontend_UI_Source_UE5_Frontend_UI_Public_FrontendSettings_FrontendDeveloperSettings_h__Script_UE5_Frontend_UI_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_UFrontendDeveloperSettings, UFrontendDeveloperSettings::StaticClass, TEXT("UFrontendDeveloperSettings"), &Z_Registration_Info_UClass_UFrontendDeveloperSettings, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UFrontendDeveloperSettings), 1048572177U) },
+		{ Z_Construct_UClass_UFrontendDeveloperSettings, UFrontendDeveloperSettings::StaticClass, TEXT("UFrontendDeveloperSettings"), &Z_Registration_Info_UClass_UFrontendDeveloperSettings, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UFrontendDeveloperSettings), 2734229890U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_sayan_Projects_UE5_UI_Framework_Modifications_UE5_Frontend_UI_Source_UE5_Frontend_UI_Public_FrontendSettings_FrontendDeveloperSettings_h__Script_UE5_Frontend_UI_3928499251(TEXT("/Script/UE5_Frontend_UI"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_sayan_Projects_UE5_UI_Framework_Modifications_UE5_Frontend_UI_Source_UE5_Frontend_UI_Public_FrontendSettings_FrontendDeveloperSettings_h__Script_UE5_Frontend_UI_3509611861(TEXT("/Script/UE5_Frontend_UI"),
 	Z_CompiledInDeferFile_FID_Users_sayan_Projects_UE5_UI_Framework_Modifications_UE5_Frontend_UI_Source_UE5_Frontend_UI_Public_FrontendSettings_FrontendDeveloperSettings_h__Script_UE5_Frontend_UI_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_sayan_Projects_UE5_UI_Framework_Modifications_UE5_Frontend_UI_Source_UE5_Frontend_UI_Public_FrontendSettings_FrontendDeveloperSettings_h__Script_UE5_Frontend_UI_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);
