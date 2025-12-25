@@ -44,12 +44,35 @@ void UWidget_OptionsScreen::NativeOnActivated()
 {
 	Super::NativeOnActivated();
 
+	FName FirstEnabledTabID = NAME_None;
+
 	for (UListDataObject_Collection* TabCollection : GetOrCreateDataRegistry()->GetRegisteredOptionsTabCollections())
 	{
 		if (!TabCollection) continue;
+		
 		const FName TabID = TabCollection->GetDataID();
+		
 		if (TabListWidget_OptionsTabs->GetTabButtonBaseByID(TabID) != nullptr) continue;
+		
 		TabListWidget_OptionsTabs->RequestRegisterTab(TabID, TabCollection->GetDataDisplayName());
+		
+		// Disable the tab button if the collection is disabled
+		if (UCommonButtonBase* TabButton = TabListWidget_OptionsTabs->GetTabButtonBaseByID(TabID))
+		{
+			TabButton->SetIsEnabled(TabCollection->IsTabEnabled());
+			
+			// NEW: Track the first enabled tab
+			if (TabCollection->IsTabEnabled() && FirstEnabledTabID == NAME_None)
+			{
+				FirstEnabledTabID = TabID;
+			}
+		}
+	}
+	
+	// NEW: Select the first enabled tab
+	if (FirstEnabledTabID != NAME_None)
+	{
+		TabListWidget_OptionsTabs->SelectTabByID(FirstEnabledTabID);
 	}
 }
 
