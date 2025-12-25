@@ -77,6 +77,7 @@ void UOptionsDataRegistry::InitGameplayCollectionTab()
 	UListDataObject_Collection* GameplayTabCollection = NewObject<UListDataObject_Collection>();
 	GameplayTabCollection->SetDataID(FName("GameplayTabCollection"));
 	GameplayTabCollection->SetDataDisplayName(FText::FromString(TEXT("Gameplay")));
+	GameplayTabCollection->SetTabEnabled(false); // NEW: Disable this tab
 	
 	UListDataObject_String* GameDifficulty = NewObject<UListDataObject_String>();
 	GameDifficulty->SetDataID(FName("GameDifficulty"));
@@ -108,6 +109,7 @@ void UOptionsDataRegistry::InitAudioCollectionTab()
 	UListDataObject_Collection* AudioTabCollection = NewObject<UListDataObject_Collection>();
 	AudioTabCollection->SetDataID(FName("AudioTabCollection"));
 	AudioTabCollection->SetDataDisplayName(FText::FromString(TEXT("Audio")));
+	AudioTabCollection->SetTabEnabled(false); // NEW: Keep Audio tab disabled
 
 	// Volume Category
 	{
@@ -200,6 +202,7 @@ void UOptionsDataRegistry::InitVideoCollectionTab()
 	UListDataObject_Collection* VideoTabCollection = NewObject<UListDataObject_Collection>();
 	VideoTabCollection->SetDataID(FName("VideoTabCollection"));
 	VideoTabCollection->SetDataDisplayName(FText::FromString(TEXT("Video")));
+	VideoTabCollection->SetTabEnabled(true); // NEW: Keep Audio tab enabled
 
 	UListDataObject_StringEnum* CreatedWindowMode = nullptr;
 
@@ -541,6 +544,7 @@ void UOptionsDataRegistry::InitControlCollectionTab(TObjectPtr<ULocalPlayer> InO
 	UListDataObject_Collection* ControlTabCollection = NewObject<UListDataObject_Collection>();
 	ControlTabCollection->SetDataID(FName("ControlTabCollection"));
 	ControlTabCollection->SetDataDisplayName(FText::FromString(TEXT("Control")));
+	ControlTabCollection->SetTabEnabled(false); // NEW: Disable this tab
 
 	UEnhancedInputLocalPlayerSubsystem* EISubsystem = InOwningLocalPlayer->GetSubsystem<UEnhancedInputLocalPlayerSubsystem>();
 	check(EISubsystem);

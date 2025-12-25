@@ -44,6 +44,8 @@
 			"FrontendPlayerController.cpp.obj",
 			"FrontendFunctionLibrary.cpp.obj",
 			"FrontendGameplayTags.cpp.obj",
+			"FrontendDeveloperSettings.cpp.obj",
+			"FrontendGameUserSettings.cpp.obj",
 			"FrontendLoadingScreenSettings.cpp.obj",
 			"FrontendLoadingScreenInterface.cpp.obj",
 			"FrontendLoadingScreenSubsystem.cpp.obj",
@@ -54,7 +56,6 @@
 			"FrontendTabListWidgetBase.cpp.obj",
 			"DataAsset_DataListEntryMapping.cpp.obj",
 			"ListDataObject_Base.cpp.obj",
-			"ListDataObject_Collection.cpp.obj",
 			"ListDataObject_KeyRemap.cpp.obj",
 			"ListDataObject_Scalar.cpp.obj",
 			"ListDataObject_String.cpp.obj",
@@ -65,16 +66,15 @@
 			"Widget_ListEntry_Scalar.cpp.obj",
 			"Widget_ListEntry_String.cpp.obj",
 			"OptionsDataInteractionHelper.cpp.obj",
-			"OptionsDataRegistry.cpp.obj",
 			"Widget_KeyRemapScreen.cpp.obj",
 			"Widget_OptionsDetailsView.cpp.obj",
-			"Widget_OptionsScreen.cpp.obj",
 			"Widget_ActivatableBase.cpp.obj",
 			"Widget_ConfirmScreen.cpp.obj",
 			"Widget_PrimaryLayout.cpp.obj",
 			"UE5_Frontend_UI.cpp.obj",
-			"FrontendDeveloperSettings.cpp.obj",
-			"FrontendGameUserSettings.cpp.obj"
+			"ListDataObject_Collection.cpp.obj",
+			"OptionsDataRegistry.cpp.obj",
+			"Widget_OptionsScreen.cpp.obj"
 		]
 	}
 }

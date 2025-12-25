@@ -14,8 +14,15 @@ public:
 	virtual bool HasAnyChildListData() const;
 
 	void AddChildListData(UListDataObject_Base* InChildListData);
+	
+	// NEW: Methods to control tab enabled state
+	void SetTabEnabled(bool bInEnabled) { bIsTabEnabled = bInEnabled; }
+	bool IsTabEnabled() const { return bIsTabEnabled; }
 
 private:
 	UPROPERTY(Transient)
 	TArray<UListDataObject_Base*> ChildListDataArray;
+	
+	// NEW: Track if this tab should be enabled
+	bool bIsTabEnabled = true;
 };

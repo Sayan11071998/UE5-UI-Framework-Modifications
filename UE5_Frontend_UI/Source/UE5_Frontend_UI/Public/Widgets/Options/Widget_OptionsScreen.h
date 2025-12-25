@@ -16,7 +16,6 @@ class UE5_FRONTEND_UI_API UWidget_OptionsScreen : public UWidget_ActivatableBase
 {
 	GENERATED_BODY()
 
-protected:
 	virtual void NativeOnInitialized() override;
 	virtual void NativeOnActivated() override;
 	virtual void NativeOnDeactivated() override;
