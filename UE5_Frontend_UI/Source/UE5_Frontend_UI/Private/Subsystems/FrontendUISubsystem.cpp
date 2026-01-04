@@ -6,15 +6,36 @@
 #include "Widgets/Widget_ConfirmScreen.h"
 #include "FrontendGameplayTags.h"
 #include "FrontendFunctionLibrary.h"
+#include "Widgets/Options/DataObjects/ListDataObject_Base.h"
 
 TObjectPtr<UFrontendUISubsystem> UFrontendUISubsystem::Get(const TObjectPtr<UObject> WorldContextObject)
 {
+	if (GEngine && WorldContextObject)
+	{
+		// Use LogWarning instead of Assert to avoid crash
+		UWorld* World = GEngine->GetWorldFromContextObject(WorldContextObject, EGetWorldErrorMode::LogAndReturnNull);
+        
+		if (World && World->GetGameInstance())
+		{
+			return UGameInstance::GetSubsystem<UFrontendUISubsystem>(World->GetGameInstance());
+		}
+	}
+    
+	// Fallback: try to find ANY game world
 	if (GEngine)
 	{
-		UWorld* World = GEngine->GetWorldFromContextObject(WorldContextObject, EGetWorldErrorMode::Assert);
-		return  UGameInstance::GetSubsystem<UFrontendUISubsystem>(World->GetGameInstance());
+		for (const FWorldContext& Context : GEngine->GetWorldContexts())
+		{
+			if (Context.WorldType == EWorldType::Game || Context.WorldType == EWorldType::PIE)
+			{
+				if (UWorld* World = Context.World())
+				{
+					return UGameInstance::GetSubsystem<UFrontendUISubsystem>(World->GetGameInstance());
+				}
+			}
+		}
 	}
-
+    
 	return nullptr;
 }
 
@@ -96,6 +117,19 @@ void UFrontendUISubsystem::PushConfirmScreenToModelStackAsync(EConfirmScreenType
 			}
 		}
 	);
+}
+
+void UFrontendUISubsystem::BroadcastOptionValueChanged(UListDataObject_Base* ChangedOption,
+	EOptionsListDataModifyReason ModifyReason)
+{
+	if (ChangedOption)
+	{
+		OnOptionValueChanged.Broadcast(
+			ChangedOption->GetDataID(),
+			ChangedOption->GetDataDisplayName(),
+			ModifyReason
+		);
+	}
 }
 
 void UFrontendUISubsystem::RegisterCreatedPrimaryLayoutWidget(UWidget_PrimaryLayout* InCreatedWidget)

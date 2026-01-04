@@ -18,22 +18,30 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 
 class UFrontendCommonButtonBase;
 class UWidget_PrimaryLayout;
+enum class EOptionsListDataModifyReason : uint8;
 
 // ********** Begin Delegate FOnButtonDescriptionTextUpdatedDelegate *******************************
-#define FID_Users_sayan_Projects_UE5_UI_Framework_Modifications_UE5_Frontend_UI_Source_UE5_Frontend_UI_Public_Subsystems_FrontendUISubsystem_h_20_DELEGATE \
+#define FID_Users_sayan_Projects_UE5_UI_Framework_Modifications_UE5_Frontend_UI_Source_UE5_Frontend_UI_Public_Subsystems_FrontendUISubsystem_h_25_DELEGATE \
 UE5_FRONTEND_UI_API void FOnButtonDescriptionTextUpdatedDelegate_DelegateWrapper(const FMulticastScriptDelegate& OnButtonDescriptionTextUpdatedDelegate, UFrontendCommonButtonBase* BroadcastingButton, const FText& DescriptionText);
 
 
 // ********** End Delegate FOnButtonDescriptionTextUpdatedDelegate *********************************
 
+// ********** Begin Delegate FOnOptionValueChangedDelegate *****************************************
+#define FID_Users_sayan_Projects_UE5_UI_Framework_Modifications_UE5_Frontend_UI_Source_UE5_Frontend_UI_Public_Subsystems_FrontendUISubsystem_h_32_DELEGATE \
+UE5_FRONTEND_UI_API void FOnOptionValueChangedDelegate_DelegateWrapper(const FMulticastScriptDelegate& OnOptionValueChangedDelegate, FName OptionID, const FText& OptionDisplayName, EOptionsListDataModifyReason ModifyReason);
+
+
+// ********** End Delegate FOnOptionValueChangedDelegate *******************************************
+
 // ********** Begin Class UFrontendUISubsystem *****************************************************
-#define FID_Users_sayan_Projects_UE5_UI_Framework_Modifications_UE5_Frontend_UI_Source_UE5_Frontend_UI_Public_Subsystems_FrontendUISubsystem_h_25_RPC_WRAPPERS_NO_PURE_DECLS \
+#define FID_Users_sayan_Projects_UE5_UI_Framework_Modifications_UE5_Frontend_UI_Source_UE5_Frontend_UI_Public_Subsystems_FrontendUISubsystem_h_37_RPC_WRAPPERS_NO_PURE_DECLS \
 	DECLARE_FUNCTION(execRegisterCreatedPrimaryLayoutWidget);
 
 
 UE5_FRONTEND_UI_API UClass* Z_Construct_UClass_UFrontendUISubsystem_NoRegister();
 
-#define FID_Users_sayan_Projects_UE5_UI_Framework_Modifications_UE5_Frontend_UI_Source_UE5_Frontend_UI_Public_Subsystems_FrontendUISubsystem_h_25_INCLASS_NO_PURE_DECLS \
+#define FID_Users_sayan_Projects_UE5_UI_Framework_Modifications_UE5_Frontend_UI_Source_UE5_Frontend_UI_Public_Subsystems_FrontendUISubsystem_h_37_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesUFrontendUISubsystem(); \
 	friend struct Z_Construct_UClass_UFrontendUISubsystem_Statics; \
@@ -44,7 +52,7 @@ public: \
 	DECLARE_SERIALIZER(UFrontendUISubsystem)
 
 
-#define FID_Users_sayan_Projects_UE5_UI_Framework_Modifications_UE5_Frontend_UI_Source_UE5_Frontend_UI_Public_Subsystems_FrontendUISubsystem_h_25_ENHANCED_CONSTRUCTORS \
+#define FID_Users_sayan_Projects_UE5_UI_Framework_Modifications_UE5_Frontend_UI_Source_UE5_Frontend_UI_Public_Subsystems_FrontendUISubsystem_h_37_ENHANCED_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API UFrontendUISubsystem(); \
 	/** Deleted move- and copy-constructors, should never be used */ \
@@ -56,13 +64,13 @@ public: \
 	NO_API virtual ~UFrontendUISubsystem();
 
 
-#define FID_Users_sayan_Projects_UE5_UI_Framework_Modifications_UE5_Frontend_UI_Source_UE5_Frontend_UI_Public_Subsystems_FrontendUISubsystem_h_22_PROLOG
-#define FID_Users_sayan_Projects_UE5_UI_Framework_Modifications_UE5_Frontend_UI_Source_UE5_Frontend_UI_Public_Subsystems_FrontendUISubsystem_h_25_GENERATED_BODY \
+#define FID_Users_sayan_Projects_UE5_UI_Framework_Modifications_UE5_Frontend_UI_Source_UE5_Frontend_UI_Public_Subsystems_FrontendUISubsystem_h_34_PROLOG
+#define FID_Users_sayan_Projects_UE5_UI_Framework_Modifications_UE5_Frontend_UI_Source_UE5_Frontend_UI_Public_Subsystems_FrontendUISubsystem_h_37_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_Users_sayan_Projects_UE5_UI_Framework_Modifications_UE5_Frontend_UI_Source_UE5_Frontend_UI_Public_Subsystems_FrontendUISubsystem_h_25_RPC_WRAPPERS_NO_PURE_DECLS \
-	FID_Users_sayan_Projects_UE5_UI_Framework_Modifications_UE5_Frontend_UI_Source_UE5_Frontend_UI_Public_Subsystems_FrontendUISubsystem_h_25_INCLASS_NO_PURE_DECLS \
-	FID_Users_sayan_Projects_UE5_UI_Framework_Modifications_UE5_Frontend_UI_Source_UE5_Frontend_UI_Public_Subsystems_FrontendUISubsystem_h_25_ENHANCED_CONSTRUCTORS \
+	FID_Users_sayan_Projects_UE5_UI_Framework_Modifications_UE5_Frontend_UI_Source_UE5_Frontend_UI_Public_Subsystems_FrontendUISubsystem_h_37_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_Users_sayan_Projects_UE5_UI_Framework_Modifications_UE5_Frontend_UI_Source_UE5_Frontend_UI_Public_Subsystems_FrontendUISubsystem_h_37_INCLASS_NO_PURE_DECLS \
+	FID_Users_sayan_Projects_UE5_UI_Framework_Modifications_UE5_Frontend_UI_Source_UE5_Frontend_UI_Public_Subsystems_FrontendUISubsystem_h_37_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 

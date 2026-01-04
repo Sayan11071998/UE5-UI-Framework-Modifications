@@ -1,5 +1,6 @@
 #include "Widgets/Options/DataObjects/ListDataObject_Base.h"
 #include "FrontendSettings/FrontendGameUserSettings.h"
+#include "Subsystems/FrontendUISubsystem.h"
 
 void UListDataObject_Base::InitDataObject()
 {
@@ -57,6 +58,11 @@ void UListDataObject_Base::NotifyListDataModified(TObjectPtr<UListDataObject_Bas
 	EOptionsListDataModifyReason ModifyReason)
 {
 	OnListDataModified.Broadcast(ModifiedData, ModifyReason);
+	
+	if (UFrontendUISubsystem* UISubsystem = UFrontendUISubsystem::Get(this))
+	{
+		UISubsystem->BroadcastOptionValueChanged(ModifiedData.Get(), ModifyReason);
+	}
 
 	if (bShouldApplyChangeImmediately)
 	{
